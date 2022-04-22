@@ -1,0 +1,93 @@
+.product-container {
+  padding: 10px;
+  background-color: white;
+
+  &:not(:last-child) {
+    border-bottom: solid 1px #ebebeb;
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+
+  @media (max-width: 480px) {
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.product-info {
+  display: flex;
+  margin-top: 16px;
+}
+
+.product-general-info {
+  flex: 7;
+  margin-left: 16px;
+}
+
+.product-title {
+  text-decoration: none;
+  color: initial;
+  color: #333333;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .product-title p {
+    font-size: 14px;
+    color: #333333;
+  }
+}
+
+.product-location {
+  flex: 3;
+  display: flex;
+}
+
+.product-price {
+  display: inline-block;
+  padding-bottom: 32px;
+  font-size: 24px;
+  color: #333333;
+}
+
+@media (max-width: 480px) {
+  .product-price {
+    margin: 10px 0;
+  }
+}
+
+.product-price-decimals {
+  font-size: 12px;
+  position: relative;
+  bottom: 7px;
+  color: #333333;
+}
+
+.product-price-free-shipping {
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 5px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: no-repeat url("../../assets/ic_shipping.png") limegreen 50% 50%;
+}
+
+.product-location {
+  p {
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+    position: relative;
+    margin-top: 8px;
+  }
+}
