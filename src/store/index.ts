@@ -9,12 +9,11 @@ const useStore = create<StateProps>(set => ({
     set({ ...INITIAL_STATE });
   },
   onSubmit: async (search: string) => {
-    console.log(search);
     set({ showSpinner: true });
 
     try {
-      const items = await callApi("/items");
-      set({ showSpinner: false, items });
+      const { categories, items } = await callApi(`/items?q=${search}`);
+      set({ showSpinner: false, items, categories });
     } catch {
       set({ isError: true, showSpinner: false });
     }

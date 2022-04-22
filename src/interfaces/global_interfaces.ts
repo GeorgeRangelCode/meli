@@ -25,9 +25,3 @@ export interface Item {
   address: Address;
   free_shipping: boolean;
 }
-
-export interface Items {
-  author: Author;
-  categories: string[];
-  items: Item[];
-}
