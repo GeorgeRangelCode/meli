@@ -13,7 +13,17 @@ const useStore = create<StateProps>(set => ({
 
     try {
       const { categories, items } = await callApi(`/items?q=${search}`);
-      set({ showSpinner: false, items, categories });
+      set({ showSpinner: false, items, categories, item: null });
+    } catch {
+      set({ isError: true, showSpinner: false });
+    }
+  },
+  getProductDetail: async (id: string) => {
+    set({ showSpinner: true, item: null });
+
+    try {
+      const { item } = await callApi(`/items/${id}`);
+      set({ showSpinner: false, item });
     } catch {
       set({ isError: true, showSpinner: false });
     }

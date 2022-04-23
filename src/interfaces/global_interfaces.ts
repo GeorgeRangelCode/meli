@@ -25,3 +25,8 @@ export interface Item {
   address: Address;
   free_shipping: boolean;
 }
+
+export interface ItemDetail extends Item {
+  sold_quantity: number;
+  description: string;
+}
