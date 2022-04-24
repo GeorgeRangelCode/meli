@@ -9,7 +9,17 @@ const ListProducts = () => {
     <div>
       <Breadcrumb />
       {items.map(item => (
-        <Product key={item.id} {...item} />
+        <Product
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          amount={item.price.amount}
+          decimals={item.price.decimals}
+          picture={item.picture}
+          condition={item.condition}
+          state_name={item.address.state_name}
+          free_shipping={item.free_shipping}
+        />
       ))}
     </div>
   );

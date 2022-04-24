@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
-import { Item } from "../interfaces/global_interfaces";
 import "../styles/components/Product.scss";
 
-const Product = ({ id, picture, title, price, free_shipping, address }: Item) => {
+interface ProductProps {
+  id: string;
+  title: string;
+  amount: number;
+  decimals?: number;
+  picture: string;
+  condition: string;
+  state_name: string;
+  free_shipping: boolean;
+}
+
+const Product = ({ id, picture, title, amount, decimals, free_shipping, state_name }: ProductProps) => {
   return (
     <div className="product-container">
       <Link to={`/items/${id}`}>
@@ -10,15 +20,15 @@ const Product = ({ id, picture, title, price, free_shipping, address }: Item) =>
           <img src={picture} alt={title} />
           <div className="product-general-info">
             <p className="product-price">
-              $ {Intl.NumberFormat("de-DE").format(price.amount)}
-              {price.decimals && <span className="product-price-decimals">{price.decimals}</span>}
+              $ {Intl.NumberFormat("de-DE").format(amount)}
+              {decimals && <span className="product-price-decimals">{decimals}</span>}
             </p>
             {free_shipping && <i className="product-price-free-shipping" />}
 
             <p className="product-title">{title}</p>
           </div>
           <div className="product-location">
-            <p>{address.state_name}</p>
+            <p>{state_name}</p>
           </div>
         </div>
       </Link>

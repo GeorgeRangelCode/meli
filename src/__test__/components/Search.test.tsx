@@ -1,8 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Search from "../../components/Search";
-
 import { MemoryRouter as Router } from "react-router-dom";
-import "@testing-library/jest-dom/extend-expect";
 
 describe("<Search />", () => {
   render(
