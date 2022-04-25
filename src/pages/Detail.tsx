@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import Breadcrumb from "../components/Breadcrumb";
+import Spinner from "../components/Spinner";
 import useGetProduct from "../hooks/useGetProduct";
 import useStore from "../store";
 import "../styles/pages/Detail.scss";
@@ -26,7 +27,9 @@ const Detail = () => {
       <main className="page--container">
         <div>
           <Breadcrumb />
-          {item && (
+          {!item ? (
+            <Spinner />
+          ) : (
             <div className="detail-container">
               <div className="detail-first-row">
                 <div className="detail-img-container">
