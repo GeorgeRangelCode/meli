@@ -26,7 +26,7 @@ export interface Item {
   free_shipping: boolean;
 }
 
-export interface ItemDetail extends Item {
+export interface ItemDetail extends Omit<Item, "address"> {
   sold_quantity: number;
   description: string;
 }
