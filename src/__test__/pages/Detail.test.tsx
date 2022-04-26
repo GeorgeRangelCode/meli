@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import Detail from "../../pages/Detail";
 import { MemoryRouter as Router } from "react-router-dom";
 import useStore from "../../store";
