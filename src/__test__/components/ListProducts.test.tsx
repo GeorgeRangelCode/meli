@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ListProducts from "../../components/ListProducts";
 import { MemoryRouter as Router } from "react-router-dom";
 import useStore from "../../store";
